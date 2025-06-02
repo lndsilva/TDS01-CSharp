@@ -27,14 +27,20 @@ namespace GPSFrancisco
         static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
         [DllImport("user32")]
         static extern int GetMenuItemCount(IntPtr hWnd);
-
-
-
         public frmGerenciarVoluntarios()
         {
             InitializeComponent();
             carregaAtribuicoes();
             desabilitarCamposNovo();
+        }
+
+        //criando método construtor com parâmetros
+        public frmGerenciarVoluntarios(string nome)
+        {
+            InitializeComponent();
+            carregaAtribuicoes();
+            desabilitarCamposNovo();
+            txtNome.Text = nome;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -172,6 +178,7 @@ namespace GPSFrancisco
             txtBairro.Enabled = false;
             txtCidade.Enabled = false;
             txtNumero.Enabled = false;
+            txtComplemento.Enabled = false;
             mskCEP.Enabled = false;
             mskTelefone.Enabled = false;
             cbbAtribuicoes.Enabled = false;
@@ -196,6 +203,7 @@ namespace GPSFrancisco
             txtBairro.Enabled = true;
             txtCidade.Enabled = true;
             txtNumero.Enabled = true;
+            txtComplemento.Enabled = true;
             mskCEP.Enabled = true;
             mskTelefone.Enabled = true;
             cbbAtribuicoes.Enabled = true;
@@ -221,6 +229,7 @@ namespace GPSFrancisco
             txtBairro.Clear();
             txtCidade.Clear();
             txtNumero.Clear();
+            txtComplemento.Clear();
             mskCEP.Clear();
             mskTelefone.Clear();
             cbbAtribuicoes.Text = "";
@@ -252,12 +261,26 @@ namespace GPSFrancisco
         public void buscaCEP(string cep)
         {
             var viaCEPService = ViaCepService.Default();
-            var endereco = viaCEPService.ObterEndereco(cep);
+            try
+            {
+                var endereco = viaCEPService.ObterEndereco(cep);
 
-            txtEndereco.Text = endereco.Logradouro.ToString();
-            txtCidade.Text = endereco.Localidade.ToString();
-            txtBairro.Text = endereco.Bairro.ToString();
-            cbbEstado.Text = endereco.UF.ToString();
+                txtEndereco.Text = endereco.Logradouro.ToString();
+                txtCidade.Text = endereco.Localidade.ToString();
+                txtBairro.Text = endereco.Bairro.ToString();
+                cbbEstado.Text = endereco.UF.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("CEP não encontrado.",
+                   "Messagem do sistema",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error,
+                   MessageBoxDefaultButton.Button1);
+                mskCEP.Focus();
+                mskCEP.Text = "";
+
+            }
         }
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
@@ -266,7 +289,14 @@ namespace GPSFrancisco
             {
                 buscaCEP(mskCEP.Text);
                 txtNumero.Focus();
-            }
+            }          
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisarVolutarios abrir = new frmPesquisarVolutarios();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
