@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68B27802-E8DE-4497-82AA-E78E4A290440}|GPSFrancisco\\GPSFrancisco.csproj|C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\gpsfrancisco\\frmgerenciarvoluntarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{68B27802-E8DE-4497-82AA-E78E4A290440}|GPSFrancisco\\GPSFrancisco.csproj|solutionrelative:gpsfrancisco\\frmgerenciarvoluntarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68B27802-E8DE-4497-82AA-E78E4A290440}|GPSFrancisco\\GPSFrancisco.csproj|c:\\users\\laercio.nsilva\\documents\\visual studio 2022\\tds01\\gpsfrancisco\\frmgerenciarvoluntarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68B27802-E8DE-4497-82AA-E78E4A290440}|GPSFrancisco\\GPSFrancisco.csproj|solutionrelative:gpsfrancisco\\frmgerenciarvoluntarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmGerenciarVoluntarios.cs",
+              "DocumentMoniker": "C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "RelativeDocumentMoniker": "GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "ToolTip": "C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "RelativeToolTip": "GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAAAAABAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T12:38:42.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmGerenciarVoluntarios.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "RelativeDocumentMoniker": "GPSFrancisco\\frmGerenciarVoluntarios.cs",
+              "ToolTip": "C:\\Users\\laercio.nsilva\\Documents\\Visual Studio 2022\\TDS01\\GPSFrancisco\\frmGerenciarVoluntarios.cs [Design]",
+              "RelativeToolTip": "GPSFrancisco\\frmGerenciarVoluntarios.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T12:38:40.294Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

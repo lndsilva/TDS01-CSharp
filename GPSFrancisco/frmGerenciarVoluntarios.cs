@@ -12,6 +12,8 @@ using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.ConstrainedExecution;
+using Org.BouncyCastle.Asn1.Cms;
+using MosaicoSolutions.ViaCep;
 
 namespace GPSFrancisco
 {
@@ -50,6 +52,38 @@ namespace GPSFrancisco
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            //verificando se os campos foram preenchidos
+            if (txtNome.Text.Equals("") ||
+                txtEmail.Text.Equals("") ||
+                mskTelefone.Text.Equals("(  )      -") ||
+                txtEndereco.Text.Equals("") ||
+                txtNumero.Text.Equals("") ||
+                mskCEP.Text.Equals("     -") ||
+                txtBairro.Text.Equals("") ||
+                txtCidade.Text.Equals("") ||
+                cbbEstado.Text.Equals("") ||
+                cbbAtribuicoes.Text.Equals("") ||
+                ckbAtivo.Checked == false
+                )
+            {
+                MessageBox.Show("Favor preencher os campos",
+                    "Messagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+                txtNome.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Cadastrado com sucesso.",
+                    "Messagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
+                limparCampos();
+                desabilitarCamposNovo();
+            }
+
         }
 
         public int cadastrarVoluntarios(string nome, string email, string telCel,
@@ -146,9 +180,93 @@ namespace GPSFrancisco
             dtpHora.Enabled = false;
             btnCadastrar.Enabled = false;
             btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
             btnLimpar.Enabled = false;
-            
+            ckbAtivo.Enabled = false;
+
         }
 
+        //habilitar campos
+        public void habilitarCamposNovo()
+        {
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtNumero.Enabled = true;
+            mskCEP.Enabled = true;
+            mskTelefone.Enabled = true;
+            cbbAtribuicoes.Enabled = true;
+            cbbEstado.Enabled = true;
+            ckbAtivo.Enabled = true;
+            dtpData.Enabled = true;
+            dtpHora.Enabled = true;
+            btnCadastrar.Enabled = true;
+            btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnLimpar.Enabled = true;
+            txtNome.Focus();
+
+        }
+
+        //limpar campos
+        public void limparCampos()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtEndereco.Clear();
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtNumero.Clear();
+            mskCEP.Clear();
+            mskTelefone.Clear();
+            cbbAtribuicoes.Text = "";
+            cbbEstado.Text = "";
+            ckbAtivo.Checked = false;
+            dtpData.Value = DateTime.Now;
+            dtpHora.Value = DateTime.Now;
+            btnCadastrar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnLimpar.Enabled = true;
+            txtNome.Focus();
+
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            habilitarCamposNovo();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            desabilitarCamposNovo();
+        }
+
+        //método para buscar o CEP
+        public void buscaCEP(string cep)
+        {
+            var viaCEPService = ViaCepService.Default();
+            var endereco = viaCEPService.ObterEndereco(cep);
+
+            txtEndereco.Text = endereco.Logradouro.ToString();
+            txtCidade.Text = endereco.Localidade.ToString();
+            txtBairro.Text = endereco.Bairro.ToString();
+            cbbEstado.Text = endereco.UF.ToString();
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buscaCEP(mskCEP.Text);
+                txtNumero.Focus();
+            }
+        }
     }
 }
