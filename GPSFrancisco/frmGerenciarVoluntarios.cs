@@ -91,10 +91,11 @@ namespace GPSFrancisco
                     status = 0;
                 }
                 if (cadastrarVoluntarios(
-                    txtNome.Text,txtEmail.Text, mskTelefone.Text,
-                    txtEndereco.Text,txtNumero.Text, mskCEP.Text,
-                    txtBairro.Text,txtCidade.Text,cbbEstado.Text,
-                    dtpData.Text,dtpHora.Text, status) == 1)
+                    txtNome.Text, txtEmail.Text, mskTelefone.Text,
+                    txtEndereco.Text, txtNumero.Text, mskCEP.Text,
+                    txtBairro.Text, txtCidade.Text, cbbEstado.Text,
+                    codigoAtribucao, dtpData.Text,
+                    dtpHora.Text, status) == 1)
                 {
 
                 }
@@ -112,7 +113,7 @@ namespace GPSFrancisco
 
         public int cadastrarVoluntarios(string nome, string email, string telCel,
             string endereco, string numero, string cep, string bairro,
-            string cidade, string estado,
+            string cidade, string estado, int codAtr,
             string data, string hora, int status)
         {
             MySqlCommand comm = new MySqlCommand();
@@ -132,7 +133,7 @@ namespace GPSFrancisco
             comm.Parameters.Add("@codAtr", MySqlDbType.Int32).Value = codigoAtribucao;
             comm.Parameters.Add("@data", MySqlDbType.Date, 100).Value = data;
             comm.Parameters.Add("@hora", MySqlDbType.Time, 100).Value = hora;
-            comm.Parameters.Add("@status", MySqlDbType.Bit, 100).Value = status;
+            comm.Parameters.Add("@status", MySqlDbType.Int32).Value = status;
 
             comm.Connection = Conexao.obterConexao();
 

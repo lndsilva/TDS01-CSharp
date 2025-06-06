@@ -23,6 +23,8 @@ primary key(codAtr));
 
 select * from tbAtribuicoes order by nome;
 
+select codAtr from tbatribuicoes where nome ='Realizar passe';
+
 create table tbVoluntarios(
 codVol int not null auto_increment,
 nome varchar(100) not null,
@@ -41,7 +43,14 @@ status bit,
 primary key(codVol),
 foreign key(codAtr)references tbAtribuicoes(codAtr));
 
-insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,bairro,cidade,estado,codAtr,data,hora,status)values(nome,email,telCel,endereco,numero,cep,bairro,cidade,estado,codAtr,data,hora,status);
+insert into tbVoluntarios(nome,email,telCel,endereco,numero
+	,cep,bairro,
+	cidade,estado,
+	codAtr,data,hora,status)
+values('Amarildo Fernadez','amarildo.fernadez@gmail.com',
+'(11)97852-8577','Rua Maria Fernadez','574',
+'04750-000','Santo Amaro','Sao Paulo',
+'SP',4,'2025/06/06','09:24:00',1);
 
 -- insert into tbUsuarios(nome,senha)
 --	values('sfrancisco','123456');
@@ -68,4 +77,7 @@ insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,bairro,cidade,es
 
 -- delete from tbUsuarios where codusu = 5;
 
+
+-- select * from tbvoluntarios where codVol = codVol;
+-- select * from tbvoluntarios where nome like '%nome%';
 

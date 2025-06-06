@@ -38,6 +38,8 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.gpbInformacoesVoluntario = new System.Windows.Forms.GroupBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.lblComplemento = new System.Windows.Forms.Label();
             this.pcbFoto = new System.Windows.Forms.PictureBox();
             this.cbbEstado = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -68,8 +70,6 @@
             this.cbbAtribuicoes = new System.Windows.Forms.ComboBox();
             this.Status = new System.Windows.Forms.Label();
             this.lblAtribuicoes = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.lblComplemento = new System.Windows.Forms.Label();
             this.pnlCRUD.SuspendLayout();
             this.gpbInformacoesVoluntario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFoto)).BeginInit();
@@ -220,6 +220,23 @@
             this.gpbInformacoesVoluntario.TabStop = false;
             this.gpbInformacoesVoluntario.Text = "Informações do voluntário";
             // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(693, 208);
+            this.txtComplemento.MaxLength = 100;
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(139, 26);
+            this.txtComplemento.TabIndex = 8;
+            // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Location = new System.Drawing.Point(693, 185);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(108, 20);
+            this.lblComplemento.TabIndex = 23;
+            this.lblComplemento.Text = "Complemento";
+            // 
             // pcbFoto
             // 
             this.pcbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -319,11 +336,10 @@
             // mskTelefone
             // 
             this.mskTelefone.Location = new System.Drawing.Point(459, 127);
-            this.mskTelefone.Mask = "(99) 99999-9999";
+            this.mskTelefone.Mask = "(999) 000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(128, 26);
             this.mskTelefone.TabIndex = 4;
-            this.mskTelefone.ValidatingType = typeof(System.DateTime);
             // 
             // lblTelefone
             // 
@@ -491,23 +507,6 @@
             this.lblAtribuicoes.Size = new System.Drawing.Size(88, 20);
             this.lblAtribuicoes.TabIndex = 22;
             this.lblAtribuicoes.Text = "Atribuições";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(693, 208);
-            this.txtComplemento.MaxLength = 100;
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(139, 26);
-            this.txtComplemento.TabIndex = 8;
-            // 
-            // lblComplemento
-            // 
-            this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(693, 185);
-            this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(108, 20);
-            this.lblComplemento.TabIndex = 23;
-            this.lblComplemento.Text = "Complemento";
             // 
             // frmGerenciarVoluntarios
             // 
