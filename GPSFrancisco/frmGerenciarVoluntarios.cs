@@ -14,6 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.ConstrainedExecution;
 using Org.BouncyCastle.Asn1.Cms;
 using MosaicoSolutions.ViaCep;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+using Image = System.Drawing.Image;
 
 namespace GPSFrancisco
 {
@@ -94,8 +97,8 @@ namespace GPSFrancisco
                     txtNome.Text, txtEmail.Text, mskTelefone.Text,
                     txtEndereco.Text, txtNumero.Text, mskCEP.Text,
                     txtBairro.Text, txtCidade.Text, cbbEstado.Text,
-                    codigoAtribucao, dtpData.Text,
-                    dtpHora.Text, status) == 1)
+                    codigoAtribucao, dtpData.Value,
+                    dtpHora.Value, status) == 1)
                 {
 
                 }
@@ -114,7 +117,7 @@ namespace GPSFrancisco
         public int cadastrarVoluntarios(string nome, string email, string telCel,
             string endereco, string numero, string cep, string bairro,
             string cidade, string estado, int codAtr,
-            string data, string hora, int status)
+            DateTime data, DateTime hora, int status)
         {
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,bairro,cidade,estado,codAtr,data,hora,status)values(@nome,@email,@telCel,@endereco,@numero,@cep,@bairro,@cidade,@estado,@codAtr,@data,@hora,@status);";
@@ -131,8 +134,8 @@ namespace GPSFrancisco
             comm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = cidade;
             comm.Parameters.Add("@estado", MySqlDbType.VarChar, 2).Value = estado;
             comm.Parameters.Add("@codAtr", MySqlDbType.Int32).Value = codigoAtribucao;
-            comm.Parameters.Add("@data", MySqlDbType.Date, 100).Value = data;
-            comm.Parameters.Add("@hora", MySqlDbType.Time, 100).Value = hora;
+            comm.Parameters.Add("@data", MySqlDbType.DateTime, 100).Value = data;
+            comm.Parameters.Add("@hora", MySqlDbType.DateTime, 100).Value = hora;
             comm.Parameters.Add("@status", MySqlDbType.Int32).Value = status;
 
             comm.Connection = Conexao.obterConexao();
@@ -317,5 +320,18 @@ namespace GPSFrancisco
             abrir.Show();
             this.Hide();
         }
+
+        private void btnCarregar_Click(object sender, EventArgs e)
+        {
+            //carregando imagens de local externo para a pictureBox
+
+            //pcbFoto.Image = Image.FromFile(@"C:\Users\laercio.nsilva\Documents\imagens\usuarios.png");
+            //pcbFoto.ImageLocation = @"C:\Users\laercio.nsilva\Documents\imagens\tela.jpg";
+            ofdCarregar.ShowDialog();
+            string path = ofdCarregar.FileName;
+            pcbFoto.Image = Image.FromFile(path);
+        }
+
+
     }
 }

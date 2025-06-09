@@ -1,83 +1,160 @@
--- drop database dbFrancisco;
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 09/06/2025 às 15:50
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
-create database dbFrancisco;
-
-use dbFrancisco;
-
-create table tbUsuarios(
-codUsu int not null auto_increment,
-nome varchar(50) not null,
-senha varchar(12) not null,
-primary key(codUsu));
-
-create table tbAtribuicoes(
-codAtr int not null auto_increment,
-nome varchar(100) not null,
-primary key(codAtr));
-
--- insert into tbAtribuicoes(nome)values(nome);
-
--- update tbAtribuicoes set nome = nome where codAtr = codAtr;
-
--- delete from tbAtribuicoes where codAtr = codAtr;
-
-select * from tbAtribuicoes order by nome;
-
-select codAtr from tbatribuicoes where nome ='Realizar passe';
-
-create table tbVoluntarios(
-codVol int not null auto_increment,
-nome varchar(100) not null,
-email varchar(100),
-telCel char(15),
-endereco varchar(100),
-numero char(5),
-cep char(9),
-bairro varchar(100),
-cidade varchar(100),
-estado char(2),
-codAtr int not null,
-data date,
-hora time,
-status bit,
-primary key(codVol),
-foreign key(codAtr)references tbAtribuicoes(codAtr));
-
-insert into tbVoluntarios(nome,email,telCel,endereco,numero
-	,cep,bairro,
-	cidade,estado,
-	codAtr,data,hora,status)
-values('Amarildo Fernadez','amarildo.fernadez@gmail.com',
-'(11)97852-8577','Rua Maria Fernadez','574',
-'04750-000','Santo Amaro','Sao Paulo',
-'SP',4,'2025/06/06','09:24:00',1);
-
--- insert into tbUsuarios(nome,senha)
---	values('sfrancisco','123456');
-
--- select * from tbUsuarios;
-
--- select nome,senha from tbUsuarios 
--- where nome='admin' and senha='admin';
-
--- select nome from tbusuarios order by nome asc;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
--- update tbUsuarios set nome = 'senac', senha = '123456789123' where codUsu = 1;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
--- pesquisa filtrada por codigo
+--
+-- Banco de dados: `dbfrancisco`
+--
 
--- select * from tbusuarios where codusu = codusu;
+-- --------------------------------------------------------
 
--- pesquisa filtrada por nome
+--
+-- Estrutura para tabela `tbatribuicoes`
+--
 
--- select * from tbUsuarios where nome like '%nome%';
+CREATE TABLE `tbatribuicoes` (
+  `codAtr` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- select * from tbUsuarios where nome = 'sfrancisco';
+--
+-- Despejando dados para a tabela `tbatribuicoes`
+--
 
--- delete from tbUsuarios where codusu = 5;
+INSERT INTO `tbatribuicoes` (`codAtr`, `nome`) VALUES
+(2, 'Acompanhamento do palestrante'),
+(1, 'Distribuição dos trabalhadores'),
+(5, 'Encerramento de final de mês'),
+(3, 'Realizar passe'),
+(4, 'Recados para diretoria'),
+(6, 'Recepção dos alimentos');
 
+-- --------------------------------------------------------
 
--- select * from tbvoluntarios where codVol = codVol;
--- select * from tbvoluntarios where nome like '%nome%';
+--
+-- Estrutura para tabela `tbusuarios`
+--
 
+CREATE TABLE `tbusuarios` (
+  `codUsu` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `senha` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbusuarios`
+--
+
+INSERT INTO `tbusuarios` (`codUsu`, `nome`, `senha`) VALUES
+(1, 'sfrancisco', '123456'),
+(2, 'admin', 'admin'),
+(5, 'isa.belli', '789456123789'),
+(6, 'admin', '123456789123');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tbvoluntarios`
+--
+
+CREATE TABLE `tbvoluntarios` (
+  `codVol` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `telCel` char(15) DEFAULT NULL,
+  `endereco` varchar(100) DEFAULT NULL,
+  `numero` char(5) DEFAULT NULL,
+  `cep` char(9) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `estado` char(2) DEFAULT NULL,
+  `codAtr` int(11) NOT NULL,
+  `data` datetime DEFAULT NULL,
+  `hora` datetime DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tbvoluntarios`
+--
+
+INSERT INTO `tbvoluntarios` (`codVol`, `nome`, `email`, `telCel`, `endereco`, `numero`, `cep`, `bairro`, `cidade`, `estado`, `codAtr`, `data`, `hora`, `status`) VALUES
+(1, 'Amarildo Fernadez', 'amarildo.fernadez@gmail.com', '(11)97852-8577', 'Rua Maria Fernadez', '574', '04750-000', 'Santo Amaro', 'Sao Paulo', 'SP', 4, '2025-06-06 00:00:00', '2025-06-09 09:24:00', 1),
+(2, 'Fernada Tornado', 'fernanda.tornado@gmail.com', '(11) 9857-4526', 'Rua Doutor Antônio Bento', '255', '04750-000', 'Santo Amaro', 'São Paulo', 'SP', 1, '2025-06-09 10:41:14', '2025-06-09 10:41:14', 1);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `tbatribuicoes`
+--
+ALTER TABLE `tbatribuicoes`
+  ADD PRIMARY KEY (`codAtr`),
+  ADD UNIQUE KEY `nome` (`nome`),
+  ADD UNIQUE KEY `codAtr` (`codAtr`);
+
+--
+-- Índices de tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  ADD PRIMARY KEY (`codUsu`);
+
+--
+-- Índices de tabela `tbvoluntarios`
+--
+ALTER TABLE `tbvoluntarios`
+  ADD PRIMARY KEY (`codVol`),
+  ADD KEY `codAtr` (`codAtr`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tbatribuicoes`
+--
+ALTER TABLE `tbatribuicoes`
+  MODIFY `codAtr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  MODIFY `codUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `tbvoluntarios`
+--
+ALTER TABLE `tbvoluntarios`
+  MODIFY `codVol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `tbvoluntarios`
+--
+ALTER TABLE `tbvoluntarios`
+  ADD CONSTRAINT `tbvoluntarios_ibfk_1` FOREIGN KEY (`codAtr`) REFERENCES `tbatribuicoes` (`codAtr`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
