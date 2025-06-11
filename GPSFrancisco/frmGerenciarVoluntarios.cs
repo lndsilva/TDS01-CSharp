@@ -44,6 +44,7 @@ namespace GPSFrancisco
             carregaAtribuicoes();
             desabilitarCamposNovo();
             txtNome.Text = nome;
+            carregaVolutariosPorNome(txtNome.Text);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -303,6 +304,54 @@ namespace GPSFrancisco
                 mskCEP.Text = "";
 
             }
+        }
+
+        //busca voluntarios alterar/deletar
+
+        public void carregaVolutariosPorNome(string nome)
+        {
+            bool status = false;
+
+
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbVoluntarios where nome = @nome;";
+            comm.CommandType = CommandType.Text;
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+
+
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+
+            if (DR.GetInt32(13) == 1)
+            {
+                status = true;
+            }
+            if (DR.GetInt32(13) == 0)
+            {
+                status = false;
+            }
+
+            txtCodigo.Text = Convert.ToString(DR.GetInt32(0));
+            txtNome.Text = DR.GetString(1);
+            txtEmail.Text = DR.GetString(2);
+            mskTelefone.Text = DR.GetString(3);
+            txtEndereco.Text = DR.GetString(4);
+            txtNumero.Text = DR.GetString(5);
+            mskCEP.Text = DR.GetString(6);
+            txtBairro.Text = DR.GetString(7);
+            txtCidade.Text = DR.GetString(8);
+            cbbEstado.Text = DR.GetString(9);
+            codigoAtribucao = DR.GetInt32(10);
+            dtpData.Value = DR.GetDateTime(11);
+            dtpHora.Value = DR.GetDateTime(12);
+            ckbAtivo.Checked = status;                      
+
+            Conexao.fecharConexao();
+
         }
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
