@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GenCode128;
+using QRCoder;
 
 namespace GPSFrancisco
 {
@@ -51,6 +54,35 @@ namespace GPSFrancisco
                 //Exemplo do resultado
                 lstParcelas.Items.Add(parcela + " | " + valor + " | " + dataVencimento);
             }
+        }
+
+        //altura do codigo de barras
+        public int altura = 2;
+
+        private void btnGerarCodigoBarras_Click(object sender, EventArgs e)
+        {
+            Image imgCodigoBarras = Code128Rendering.MakeBarcodeImage(txtNumCodigoBarras.Text, altura, true);
+            pctCodigoBarras.Image = imgCodigoBarras;
+
+           
+        }
+
+        private void btnGerarQRCode_Click(object sender, EventArgs e)
+        {
+            gerarQRCode();
+        }
+
+        private void gerarQRCode()
+        {
+            Url url = new Url(txtNumCodigoBarras.Text);
+
+            string pgCarregada = url.ToString();
+
+            QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+            QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(pgCarregada, QRCodeGenerator.ECCLevel.Q);
+            QRCode qRCode = new QRCode(qRCodeData);
+            pctQRCode.Image = qRCode.GetGraphic(4);
+
         }
     }
 }

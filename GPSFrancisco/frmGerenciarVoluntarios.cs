@@ -242,6 +242,33 @@ namespace GPSFrancisco
 
         }
 
+        //habilitar campos Alterar
+        public void habilitarCamposAlterar()
+        {
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtNumero.Enabled = true;
+            txtComplemento.Enabled = true;
+            mskCEP.Enabled = true;
+            mskTelefone.Enabled = true;
+            cbbAtribuicoes.Enabled = true;
+            cbbEstado.Enabled = true;
+            ckbAtivo.Enabled = true;
+            dtpData.Enabled = true;
+            dtpHora.Enabled = true;
+            btnNovo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnExcluir.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnLimpar.Enabled = true;
+            txtNome.Focus();
+
+        }
+
         //limpar campos
         public void limparCampos()
         {
@@ -351,6 +378,8 @@ namespace GPSFrancisco
             ckbAtivo.Checked = status;                      
 
             Conexao.fecharConexao();
+
+            habilitarCamposAlterar();
 
         }
 
