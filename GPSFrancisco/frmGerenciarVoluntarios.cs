@@ -17,6 +17,7 @@ using MosaicoSolutions.ViaCep;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 using Image = System.Drawing.Image;
+using System.IO;
 
 namespace GPSFrancisco
 {
@@ -73,7 +74,8 @@ namespace GPSFrancisco
                 txtCidade.Text.Equals("") ||
                 cbbEstado.Text.Equals("") ||
                 cbbAtribuicoes.Text.Equals("") ||
-                ckbAtivo.Checked == false
+                ckbAtivo.Checked == false ||
+                pcbFoto.Image == null
                 )
             {
                 MessageBox.Show("Favor preencher os campos",
@@ -99,7 +101,7 @@ namespace GPSFrancisco
                     txtEndereco.Text, txtNumero.Text, mskCEP.Text,
                     txtBairro.Text, txtCidade.Text, cbbEstado.Text,
                     codigoAtribucao, dtpData.Value,
-                    dtpHora.Value, status) == 1)
+                    dtpHora.Value, status,salvarFotos().LongLength) == 1)
                 {
 
                 }
@@ -118,10 +120,10 @@ namespace GPSFrancisco
         public int cadastrarVoluntarios(string nome, string email, string telCel,
             string endereco, string numero, string cep, string bairro,
             string cidade, string estado, int codAtr,
-            DateTime data, DateTime hora, int status)
+            DateTime data, DateTime hora, int status, long foto)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,bairro,cidade,estado,codAtr,data,hora,status)values(@nome,@email,@telCel,@endereco,@numero,@cep,@bairro,@cidade,@estado,@codAtr,@data,@hora,@status);";
+            comm.CommandText = "insert into tbVoluntarios(nome,email,telCel,endereco,numero,cep,bairro,cidade,estado,codAtr,data,hora,status,foto)values(@nome,@email,@telCel,@endereco,@numero,@cep,@bairro,@cidade,@estado,@codAtr,@data,@hora,@status,@foto);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -138,6 +140,7 @@ namespace GPSFrancisco
             comm.Parameters.Add("@data", MySqlDbType.DateTime, 100).Value = data;
             comm.Parameters.Add("@hora", MySqlDbType.DateTime, 100).Value = hora;
             comm.Parameters.Add("@status", MySqlDbType.Int32).Value = status;
+            comm.Parameters.Add("@foto", MySqlDbType.LongBlob).Value = foto;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -213,6 +216,7 @@ namespace GPSFrancisco
             btnAlterar.Enabled = false;
             btnLimpar.Enabled = false;
             ckbAtivo.Enabled = false;
+            btnInserir.Enabled = false;
 
         }
 
@@ -238,8 +242,8 @@ namespace GPSFrancisco
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
             btnLimpar.Enabled = true;
+            btnInserir.Enabled = true;
             txtNome.Focus();
-
         }
 
         //habilitar campos Alterar
@@ -266,7 +270,6 @@ namespace GPSFrancisco
             btnAlterar.Enabled = true;
             btnLimpar.Enabled = true;
             txtNome.Focus();
-
         }
 
         //limpar campos
@@ -292,13 +295,13 @@ namespace GPSFrancisco
             btnAlterar.Enabled = false;
             btnLimpar.Enabled = true;
             txtNome.Focus();
-
-
+            pcbFoto.Image = null;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCamposNovo();
+            btnNovo.Enabled = false;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -375,7 +378,8 @@ namespace GPSFrancisco
             codigoAtribucao = DR.GetInt32(10);
             dtpData.Value = DR.GetDateTime(11);
             dtpHora.Value = DR.GetDateTime(12);
-            ckbAtivo.Checked = status;                      
+            ckbAtivo.Checked = status;
+          // pcbFoto.Image = DR.GetBytes(14);
 
             Conexao.fecharConexao();
 
@@ -398,18 +402,35 @@ namespace GPSFrancisco
             abrir.Show();
             this.Hide();
         }
+        string enderecoFoto;
 
-        private void btnCarregar_Click(object sender, EventArgs e)
+        private void btnInserir_Click(object sender, EventArgs e)
         {
-            //carregando imagens de local externo para a pictureBox
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "JPG Files(*.jpg)|*.jpg|" +
+                "PNG Files(*.png)|*.png|AllFiles(*.*) | *.*";
 
-            //pcbFoto.Image = Image.FromFile(@"C:\Users\laercio.nsilva\Documents\imagens\usuarios.png");
-            //pcbFoto.ImageLocation = @"C:\Users\laercio.nsilva\Documents\imagens\tela.jpg";
-            ofdCarregar.ShowDialog();
-            string path = ofdCarregar.FileName;
-            pcbFoto.Image = Image.FromFile(path);
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string foto = dialog.FileName.ToString();
+                enderecoFoto = foto;
+                pcbFoto.ImageLocation = foto;
+                txtNome.Focus();
+            }
         }
+        public byte[] salvarFotos()
+        {
+            byte[] imagem_byte = null;
 
+            FileStream fs = new FileStream(enderecoFoto, 
+                FileMode.Open, FileAccess.Read);
+
+            BinaryReader br = new BinaryReader(fs);
+
+            imagem_byte = br.ReadBytes((int)fs.Length);
+
+            return imagem_byte;
+        }
 
     }
 }

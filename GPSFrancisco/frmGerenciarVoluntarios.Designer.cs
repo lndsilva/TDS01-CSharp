@@ -38,7 +38,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.gpbInformacoesVoluntario = new System.Windows.Forms.GroupBox();
-            this.btnCarregar = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
             this.pcbFoto = new System.Windows.Forms.PictureBox();
@@ -191,7 +191,7 @@
             // 
             // gpbInformacoesVoluntario
             // 
-            this.gpbInformacoesVoluntario.Controls.Add(this.btnCarregar);
+            this.gpbInformacoesVoluntario.Controls.Add(this.btnInserir);
             this.gpbInformacoesVoluntario.Controls.Add(this.txtComplemento);
             this.gpbInformacoesVoluntario.Controls.Add(this.lblComplemento);
             this.gpbInformacoesVoluntario.Controls.Add(this.pcbFoto);
@@ -218,25 +218,25 @@
             this.gpbInformacoesVoluntario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInformacoesVoluntario.Location = new System.Drawing.Point(7, 12);
             this.gpbInformacoesVoluntario.Name = "gpbInformacoesVoluntario";
-            this.gpbInformacoesVoluntario.Size = new System.Drawing.Size(851, 334);
+            this.gpbInformacoesVoluntario.Size = new System.Drawing.Size(851, 359);
             this.gpbInformacoesVoluntario.TabIndex = 0;
             this.gpbInformacoesVoluntario.TabStop = false;
             this.gpbInformacoesVoluntario.Text = "Informações do voluntário";
             // 
-            // btnCarregar
+            // btnInserir
             // 
-            this.btnCarregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarregar.Location = new System.Drawing.Point(726, 167);
-            this.btnCarregar.Name = "btnCarregar";
-            this.btnCarregar.Size = new System.Drawing.Size(79, 25);
-            this.btnCarregar.TabIndex = 25;
-            this.btnCarregar.Text = "Carregar";
-            this.btnCarregar.UseVisualStyleBackColor = true;
-            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
+            this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInserir.Location = new System.Drawing.Point(682, 175);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(150, 29);
+            this.btnInserir.TabIndex = 25;
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(693, 231);
+            this.txtComplemento.Location = new System.Drawing.Point(693, 244);
             this.txtComplemento.MaxLength = 100;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(139, 26);
@@ -245,7 +245,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(693, 208);
+            this.lblComplemento.Location = new System.Drawing.Point(693, 221);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(108, 20);
             this.lblComplemento.TabIndex = 23;
@@ -254,9 +254,9 @@
             // pcbFoto
             // 
             this.pcbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pcbFoto.Location = new System.Drawing.Point(683, 15);
+            this.pcbFoto.Location = new System.Drawing.Point(682, 25);
             this.pcbFoto.Name = "pcbFoto";
-            this.pcbFoto.Size = new System.Drawing.Size(154, 144);
+            this.pcbFoto.Size = new System.Drawing.Size(150, 144);
             this.pcbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbFoto.TabIndex = 21;
             this.pcbFoto.TabStop = false;
@@ -264,7 +264,7 @@
             // cbbEstado
             // 
             this.cbbEstado.FormattingEnabled = true;
-            this.cbbEstado.Location = new System.Drawing.Point(553, 298);
+            this.cbbEstado.Location = new System.Drawing.Point(553, 311);
             this.cbbEstado.Name = "cbbEstado";
             this.cbbEstado.Size = new System.Drawing.Size(161, 28);
             this.cbbEstado.TabIndex = 11;
@@ -272,7 +272,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(553, 275);
+            this.lblEstado.Location = new System.Drawing.Point(553, 288);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(60, 20);
             this.lblEstado.TabIndex = 19;
@@ -280,7 +280,7 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(291, 298);
+            this.txtCidade.Location = new System.Drawing.Point(291, 311);
             this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(240, 26);
@@ -288,7 +288,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(475, 231);
+            this.txtNumero.Location = new System.Drawing.Point(475, 244);
             this.txtNumero.MaxLength = 5;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(102, 26);
@@ -297,7 +297,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(475, 208);
+            this.lblNumero.Location = new System.Drawing.Point(475, 221);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(65, 20);
             this.lblNumero.TabIndex = 16;
@@ -306,7 +306,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(291, 275);
+            this.lblCidade.Location = new System.Drawing.Point(291, 288);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(59, 20);
             this.lblCidade.TabIndex = 14;
@@ -314,7 +314,7 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(27, 298);
+            this.txtBairro.Location = new System.Drawing.Point(27, 311);
             this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(240, 26);
@@ -323,7 +323,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(27, 275);
+            this.lblBairro.Location = new System.Drawing.Point(27, 288);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(51, 20);
             this.lblBairro.TabIndex = 12;
@@ -331,7 +331,7 @@
             // 
             // mskCEP
             // 
-            this.mskCEP.Location = new System.Drawing.Point(588, 231);
+            this.mskCEP.Location = new System.Drawing.Point(588, 244);
             this.mskCEP.Mask = "99999-999";
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(92, 26);
@@ -342,7 +342,7 @@
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(588, 208);
+            this.lblCEP.Location = new System.Drawing.Point(588, 221);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(41, 20);
             this.lblCEP.TabIndex = 10;
@@ -367,7 +367,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(27, 231);
+            this.txtEndereco.Location = new System.Drawing.Point(27, 244);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(427, 26);
@@ -376,7 +376,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(27, 208);
+            this.lblEndereco.Location = new System.Drawing.Point(27, 221);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(78, 20);
             this.lblEndereco.TabIndex = 5;
@@ -445,9 +445,9 @@
             this.gpbInformacoesDirigente.Controls.Add(this.Status);
             this.gpbInformacoesDirigente.Controls.Add(this.lblAtribuicoes);
             this.gpbInformacoesDirigente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbInformacoesDirigente.Location = new System.Drawing.Point(7, 352);
+            this.gpbInformacoesDirigente.Location = new System.Drawing.Point(7, 369);
             this.gpbInformacoesDirigente.Name = "gpbInformacoesDirigente";
-            this.gpbInformacoesDirigente.Size = new System.Drawing.Size(851, 136);
+            this.gpbInformacoesDirigente.Size = new System.Drawing.Size(851, 119);
             this.gpbInformacoesDirigente.TabIndex = 12;
             this.gpbInformacoesDirigente.TabStop = false;
             this.gpbInformacoesDirigente.Text = "Informações do Dirigente";
@@ -455,7 +455,7 @@
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(615, 35);
+            this.lblHora.Location = new System.Drawing.Point(615, 51);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(44, 20);
             this.lblHora.TabIndex = 27;
@@ -464,7 +464,7 @@
             // dtpHora
             // 
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(615, 60);
+            this.dtpHora.Location = new System.Drawing.Point(615, 76);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.Size = new System.Drawing.Size(97, 26);
             this.dtpHora.TabIndex = 15;
@@ -472,7 +472,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(492, 35);
+            this.lblData.Location = new System.Drawing.Point(492, 51);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(44, 20);
             this.lblData.TabIndex = 25;
@@ -481,7 +481,7 @@
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(492, 60);
+            this.dtpData.Location = new System.Drawing.Point(492, 76);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(107, 26);
             this.dtpData.TabIndex = 14;
@@ -489,7 +489,7 @@
             // ckbAtivo
             // 
             this.ckbAtivo.AutoSize = true;
-            this.ckbAtivo.Location = new System.Drawing.Point(761, 64);
+            this.ckbAtivo.Location = new System.Drawing.Point(761, 80);
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.Size = new System.Drawing.Size(63, 24);
             this.ckbAtivo.TabIndex = 16;
@@ -499,7 +499,7 @@
             // cbbAtribuicoes
             // 
             this.cbbAtribuicoes.FormattingEnabled = true;
-            this.cbbAtribuicoes.Location = new System.Drawing.Point(26, 60);
+            this.cbbAtribuicoes.Location = new System.Drawing.Point(26, 76);
             this.cbbAtribuicoes.Name = "cbbAtribuicoes";
             this.cbbAtribuicoes.Size = new System.Drawing.Size(460, 28);
             this.cbbAtribuicoes.TabIndex = 13;
@@ -508,7 +508,7 @@
             // Status
             // 
             this.Status.AutoSize = true;
-            this.Status.Location = new System.Drawing.Point(757, 39);
+            this.Status.Location = new System.Drawing.Point(757, 55);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(56, 20);
             this.Status.TabIndex = 21;
@@ -517,7 +517,7 @@
             // lblAtribuicoes
             // 
             this.lblAtribuicoes.AutoSize = true;
-            this.lblAtribuicoes.Location = new System.Drawing.Point(26, 37);
+            this.lblAtribuicoes.Location = new System.Drawing.Point(26, 53);
             this.lblAtribuicoes.Name = "lblAtribuicoes";
             this.lblAtribuicoes.Size = new System.Drawing.Size(88, 20);
             this.lblAtribuicoes.TabIndex = 22;
@@ -540,7 +540,7 @@
             this.MaximizeBox = false;
             this.Name = "frmGerenciarVoluntarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "\'";
+            this.Text = "GPSFrancisco - Gerenciar Voluntários";
             this.Load += new System.EventHandler(this.frmGerenciarVoluntarios_Load);
             this.pnlCRUD.ResumeLayout(false);
             this.gpbInformacoesVoluntario.ResumeLayout(false);
@@ -595,7 +595,7 @@
         private System.Windows.Forms.DateTimePicker dtpData;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.Button btnCarregar;
         private System.Windows.Forms.OpenFileDialog ofdCarregar;
+        private System.Windows.Forms.Button btnInserir;
     }
 }
