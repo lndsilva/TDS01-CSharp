@@ -58,3 +58,6 @@ C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debu
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\GenCode128.dll
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\System.Drawing.Common.dll
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\QRCoder.dll
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
