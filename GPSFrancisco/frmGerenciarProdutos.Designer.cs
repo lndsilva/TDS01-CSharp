@@ -43,23 +43,23 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.gpbInformacoesProduto = new System.Windows.Forms.GroupBox();
+            this.lblImgCodigoBarras = new System.Windows.Forms.Label();
+            this.pctCodigoBarras = new System.Windows.Forms.PictureBox();
+            this.btnUnidade = new System.Windows.Forms.Button();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lblQuantidade = new System.Windows.Forms.Label();
+            this.lblCodigoBarras = new System.Windows.Forms.Label();
+            this.lblValidade = new System.Windows.Forms.Label();
+            this.dtpValidade = new System.Windows.Forms.DateTimePicker();
+            this.lblHoraEntrada = new System.Windows.Forms.Label();
+            this.txtLote = new System.Windows.Forms.TextBox();
+            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblLote = new System.Windows.Forms.Label();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtCodigoBarras = new System.Windows.Forms.TextBox();
-            this.txtLote = new System.Windows.Forms.TextBox();
-            this.lblLote = new System.Windows.Forms.Label();
-            this.lblHoraEntrada = new System.Windows.Forms.Label();
-            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblDataEntrada = new System.Windows.Forms.Label();
-            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblValidade = new System.Windows.Forms.Label();
-            this.dtpValidade = new System.Windows.Forms.DateTimePicker();
-            this.lblCodigoBarras = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.lblQuantidade = new System.Windows.Forms.Label();
-            this.btnUnidade = new System.Windows.Forms.Button();
-            this.pctCodigoBarras = new System.Windows.Forms.PictureBox();
-            this.lblImgCodigoBarras = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoProduto)).BeginInit();
             this.pnlCRUD.SuspendLayout();
             this.gpbInformacoesProduto.SuspendLayout();
@@ -88,8 +88,9 @@
             // 
             // cbbUnidade
             // 
+            this.cbbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbUnidade.FormattingEnabled = true;
-            this.cbbUnidade.Location = new System.Drawing.Point(491, 143);
+            this.cbbUnidade.Location = new System.Drawing.Point(491, 126);
             this.cbbUnidade.Name = "cbbUnidade";
             this.cbbUnidade.Size = new System.Drawing.Size(146, 28);
             this.cbbUnidade.TabIndex = 11;
@@ -97,7 +98,7 @@
             // lblUnidade
             // 
             this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Location = new System.Drawing.Point(491, 120);
+            this.lblUnidade.Location = new System.Drawing.Point(491, 103);
             this.lblUnidade.Name = "lblUnidade";
             this.lblUnidade.Size = new System.Drawing.Size(69, 20);
             this.lblUnidade.TabIndex = 19;
@@ -117,7 +118,7 @@
             this.pnlCRUD.Controls.Add(this.btnAlterar);
             this.pnlCRUD.Controls.Add(this.btnCadastrar);
             this.pnlCRUD.Controls.Add(this.btnNovo);
-            this.pnlCRUD.Location = new System.Drawing.Point(8, 291);
+            this.pnlCRUD.Location = new System.Drawing.Point(8, 313);
             this.pnlCRUD.Name = "pnlCRUD";
             this.pnlCRUD.Size = new System.Drawing.Size(867, 65);
             this.pnlCRUD.TabIndex = 20;
@@ -134,6 +135,7 @@
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -186,6 +188,7 @@
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -239,14 +242,140 @@
             this.gpbInformacoesProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInformacoesProduto.Location = new System.Drawing.Point(8, 6);
             this.gpbInformacoesProduto.Name = "gpbInformacoesProduto";
-            this.gpbInformacoesProduto.Size = new System.Drawing.Size(865, 279);
+            this.gpbInformacoesProduto.Size = new System.Drawing.Size(865, 301);
             this.gpbInformacoesProduto.TabIndex = 18;
             this.gpbInformacoesProduto.TabStop = false;
             this.gpbInformacoesProduto.Text = "Informações do produto";
             // 
+            // lblImgCodigoBarras
+            // 
+            this.lblImgCodigoBarras.AutoSize = true;
+            this.lblImgCodigoBarras.Location = new System.Drawing.Point(301, 33);
+            this.lblImgCodigoBarras.Name = "lblImgCodigoBarras";
+            this.lblImgCodigoBarras.Size = new System.Drawing.Size(189, 20);
+            this.lblImgCodigoBarras.TabIndex = 39;
+            this.lblImgCodigoBarras.Text = "Imagem código de barras";
+            // 
+            // pctCodigoBarras
+            // 
+            this.pctCodigoBarras.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pctCodigoBarras.Location = new System.Drawing.Point(301, 56);
+            this.pctCodigoBarras.Name = "pctCodigoBarras";
+            this.pctCodigoBarras.Size = new System.Drawing.Size(336, 34);
+            this.pctCodigoBarras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCodigoBarras.TabIndex = 38;
+            this.pctCodigoBarras.TabStop = false;
+            // 
+            // btnUnidade
+            // 
+            this.btnUnidade.FlatAppearance.BorderSize = 0;
+            this.btnUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnidade.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidade.Image")));
+            this.btnUnidade.Location = new System.Drawing.Point(643, 126);
+            this.btnUnidade.Name = "btnUnidade";
+            this.btnUnidade.Size = new System.Drawing.Size(39, 28);
+            this.btnUnidade.TabIndex = 37;
+            this.btnUnidade.UseVisualStyleBackColor = true;
+            this.btnUnidade.Click += new System.EventHandler(this.btnUnidade_Click);
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(23, 200);
+            this.txtQuantidade.MaxLength = 100;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(96, 26);
+            this.txtQuantidade.TabIndex = 35;
+            // 
+            // lblQuantidade
+            // 
+            this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.Location = new System.Drawing.Point(23, 177);
+            this.lblQuantidade.Name = "lblQuantidade";
+            this.lblQuantidade.Size = new System.Drawing.Size(92, 20);
+            this.lblQuantidade.TabIndex = 36;
+            this.lblQuantidade.Text = "Quantidade";
+            // 
+            // lblCodigoBarras
+            // 
+            this.lblCodigoBarras.AutoSize = true;
+            this.lblCodigoBarras.Location = new System.Drawing.Point(23, 34);
+            this.lblCodigoBarras.Name = "lblCodigoBarras";
+            this.lblCodigoBarras.Size = new System.Drawing.Size(130, 20);
+            this.lblCodigoBarras.TabIndex = 34;
+            this.lblCodigoBarras.Text = "Código de barras";
+            // 
+            // lblValidade
+            // 
+            this.lblValidade.AutoSize = true;
+            this.lblValidade.Location = new System.Drawing.Point(444, 177);
+            this.lblValidade.Name = "lblValidade";
+            this.lblValidade.Size = new System.Drawing.Size(71, 20);
+            this.lblValidade.TabIndex = 33;
+            this.lblValidade.Text = "Validade";
+            // 
+            // dtpValidade
+            // 
+            this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpValidade.Location = new System.Drawing.Point(444, 202);
+            this.dtpValidade.Name = "dtpValidade";
+            this.dtpValidade.Size = new System.Drawing.Size(107, 26);
+            this.dtpValidade.TabIndex = 32;
+            // 
+            // lblHoraEntrada
+            // 
+            this.lblHoraEntrada.AutoSize = true;
+            this.lblHoraEntrada.Location = new System.Drawing.Point(294, 177);
+            this.lblHoraEntrada.Name = "lblHoraEntrada";
+            this.lblHoraEntrada.Size = new System.Drawing.Size(125, 20);
+            this.lblHoraEntrada.TabIndex = 31;
+            this.lblHoraEntrada.Text = "Hora da entrada";
+            // 
+            // txtLote
+            // 
+            this.txtLote.Location = new System.Drawing.Point(378, 126);
+            this.txtLote.MaxLength = 5;
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(102, 26);
+            this.txtLote.TabIndex = 26;
+            // 
+            // dtpHoraEntrada
+            // 
+            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(294, 202);
+            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(97, 26);
+            this.dtpHoraEntrada.TabIndex = 29;
+            // 
+            // lblLote
+            // 
+            this.lblLote.AutoSize = true;
+            this.lblLote.Location = new System.Drawing.Point(378, 103);
+            this.lblLote.Name = "lblLote";
+            this.lblLote.Size = new System.Drawing.Size(41, 20);
+            this.lblLote.TabIndex = 27;
+            this.lblLote.Text = "Lote";
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.Location = new System.Drawing.Point(147, 177);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Size = new System.Drawing.Size(125, 20);
+            this.lblDataEntrada.TabIndex = 30;
+            this.lblDataEntrada.Text = "Data de entrada";
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(147, 202);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(103, 26);
+            this.dtpDataEntrada.TabIndex = 28;
+            // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(23, 143);
+            this.txtDescricao.Location = new System.Drawing.Point(23, 126);
             this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(340, 26);
@@ -255,7 +384,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(23, 120);
+            this.lblDescricao.Location = new System.Drawing.Point(23, 103);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(80, 20);
             this.lblDescricao.TabIndex = 2;
@@ -270,131 +399,6 @@
             this.txtCodigoBarras.Size = new System.Drawing.Size(261, 26);
             this.txtCodigoBarras.TabIndex = 1;
             // 
-            // txtLote
-            // 
-            this.txtLote.Location = new System.Drawing.Point(378, 143);
-            this.txtLote.MaxLength = 5;
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(102, 26);
-            this.txtLote.TabIndex = 26;
-            // 
-            // lblLote
-            // 
-            this.lblLote.AutoSize = true;
-            this.lblLote.Location = new System.Drawing.Point(378, 120);
-            this.lblLote.Name = "lblLote";
-            this.lblLote.Size = new System.Drawing.Size(41, 20);
-            this.lblLote.TabIndex = 27;
-            this.lblLote.Text = "Lote";
-            // 
-            // lblHoraEntrada
-            // 
-            this.lblHoraEntrada.AutoSize = true;
-            this.lblHoraEntrada.Location = new System.Drawing.Point(294, 193);
-            this.lblHoraEntrada.Name = "lblHoraEntrada";
-            this.lblHoraEntrada.Size = new System.Drawing.Size(125, 20);
-            this.lblHoraEntrada.TabIndex = 31;
-            this.lblHoraEntrada.Text = "Hora da entrada";
-            // 
-            // dtpHoraEntrada
-            // 
-            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEntrada.Location = new System.Drawing.Point(294, 218);
-            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
-            this.dtpHoraEntrada.Size = new System.Drawing.Size(97, 26);
-            this.dtpHoraEntrada.TabIndex = 29;
-            // 
-            // lblDataEntrada
-            // 
-            this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.Location = new System.Drawing.Point(147, 193);
-            this.lblDataEntrada.Name = "lblDataEntrada";
-            this.lblDataEntrada.Size = new System.Drawing.Size(125, 20);
-            this.lblDataEntrada.TabIndex = 30;
-            this.lblDataEntrada.Text = "Data de entrada";
-            // 
-            // dtpDataEntrada
-            // 
-            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(147, 218);
-            this.dtpDataEntrada.Name = "dtpDataEntrada";
-            this.dtpDataEntrada.Size = new System.Drawing.Size(103, 26);
-            this.dtpDataEntrada.TabIndex = 28;
-            // 
-            // lblValidade
-            // 
-            this.lblValidade.AutoSize = true;
-            this.lblValidade.Location = new System.Drawing.Point(444, 193);
-            this.lblValidade.Name = "lblValidade";
-            this.lblValidade.Size = new System.Drawing.Size(71, 20);
-            this.lblValidade.TabIndex = 33;
-            this.lblValidade.Text = "Validade";
-            // 
-            // dtpValidade
-            // 
-            this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpValidade.Location = new System.Drawing.Point(444, 218);
-            this.dtpValidade.Name = "dtpValidade";
-            this.dtpValidade.Size = new System.Drawing.Size(107, 26);
-            this.dtpValidade.TabIndex = 32;
-            // 
-            // lblCodigoBarras
-            // 
-            this.lblCodigoBarras.AutoSize = true;
-            this.lblCodigoBarras.Location = new System.Drawing.Point(23, 34);
-            this.lblCodigoBarras.Name = "lblCodigoBarras";
-            this.lblCodigoBarras.Size = new System.Drawing.Size(130, 20);
-            this.lblCodigoBarras.TabIndex = 34;
-            this.lblCodigoBarras.Text = "Código de barras";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(23, 216);
-            this.txtQuantidade.MaxLength = 100;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(96, 26);
-            this.txtQuantidade.TabIndex = 35;
-            // 
-            // lblQuantidade
-            // 
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(23, 193);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(92, 20);
-            this.lblQuantidade.TabIndex = 36;
-            this.lblQuantidade.Text = "Quantidade";
-            // 
-            // btnUnidade
-            // 
-            this.btnUnidade.FlatAppearance.BorderSize = 0;
-            this.btnUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnidade.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidade.Image")));
-            this.btnUnidade.Location = new System.Drawing.Point(643, 143);
-            this.btnUnidade.Name = "btnUnidade";
-            this.btnUnidade.Size = new System.Drawing.Size(39, 28);
-            this.btnUnidade.TabIndex = 37;
-            this.btnUnidade.UseVisualStyleBackColor = true;
-            // 
-            // pctCodigoBarras
-            // 
-            this.pctCodigoBarras.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pctCodigoBarras.Location = new System.Drawing.Point(301, 56);
-            this.pctCodigoBarras.Name = "pctCodigoBarras";
-            this.pctCodigoBarras.Size = new System.Drawing.Size(336, 34);
-            this.pctCodigoBarras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctCodigoBarras.TabIndex = 38;
-            this.pctCodigoBarras.TabStop = false;
-            // 
-            // lblImgCodigoBarras
-            // 
-            this.lblImgCodigoBarras.AutoSize = true;
-            this.lblImgCodigoBarras.Location = new System.Drawing.Point(301, 33);
-            this.lblImgCodigoBarras.Name = "lblImgCodigoBarras";
-            this.lblImgCodigoBarras.Size = new System.Drawing.Size(189, 20);
-            this.lblImgCodigoBarras.TabIndex = 39;
-            this.lblImgCodigoBarras.Text = "Imagem código de barras";
-            // 
             // frmGerenciarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +412,7 @@
             this.Name = "frmGerenciarProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GPSFrancisco - Gerenciar Produtos";
+            this.Load += new System.EventHandler(this.frmGerenciarProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoProduto)).EndInit();
             this.pnlCRUD.ResumeLayout(false);
             this.gpbInformacoesProduto.ResumeLayout(false);

@@ -67,10 +67,10 @@
             this.pnlCRUD.Controls.Add(this.btnAlterar);
             this.pnlCRUD.Controls.Add(this.btnCadastrar);
             this.pnlCRUD.Controls.Add(this.btnNovo);
-            this.pnlCRUD.Location = new System.Drawing.Point(8, 174);
+            this.pnlCRUD.Location = new System.Drawing.Point(8, 162);
             this.pnlCRUD.Name = "pnlCRUD";
-            this.pnlCRUD.Size = new System.Drawing.Size(308, 205);
-            this.pnlCRUD.TabIndex = 22;
+            this.pnlCRUD.Size = new System.Drawing.Size(312, 205);
+            this.pnlCRUD.TabIndex = 4;
             // 
             // btnVoltar
             // 
@@ -79,11 +79,12 @@
             this.btnVoltar.Location = new System.Drawing.Point(131, 107);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(121, 42);
-            this.btnVoltar.TabIndex = 24;
+            this.btnVoltar.TabIndex = 11;
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -92,7 +93,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(131, 11);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(121, 42);
-            this.btnLimpar.TabIndex = 23;
+            this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "&Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,11 +106,12 @@
             this.btnPesquisar.Location = new System.Drawing.Point(131, 59);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(121, 42);
-            this.btnPesquisar.TabIndex = 22;
+            this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "&Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnExcluir
             // 
@@ -118,7 +120,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(4, 107);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(121, 42);
-            this.btnExcluir.TabIndex = 21;
+            this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,11 +133,12 @@
             this.btnAlterar.Location = new System.Drawing.Point(3, 155);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(121, 42);
-            this.btnAlterar.TabIndex = 20;
+            this.btnAlterar.TabIndex = 8;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -144,11 +147,12 @@
             this.btnCadastrar.Location = new System.Drawing.Point(4, 59);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(121, 42);
-            this.btnCadastrar.TabIndex = 19;
+            this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "&Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnNovo
             // 
@@ -157,24 +161,25 @@
             this.btnNovo.Location = new System.Drawing.Point(4, 11);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(121, 42);
-            this.btnNovo.TabIndex = 18;
+            this.btnNovo.TabIndex = 5;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(10, 113);
-            this.txtDescricao.MaxLength = 100;
+            this.txtDescricao.Location = new System.Drawing.Point(116, 50);
+            this.txtDescricao.MaxLength = 50;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(201, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(186, 26);
             this.txtDescricao.TabIndex = 2;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(10, 90);
+            this.lblDescricao.Location = new System.Drawing.Point(116, 27);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(80, 20);
             this.lblDescricao.TabIndex = 2;
@@ -200,23 +205,24 @@
             this.gpbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbUnidade.Location = new System.Drawing.Point(8, 6);
             this.gpbUnidade.Name = "gpbUnidade";
-            this.gpbUnidade.Size = new System.Drawing.Size(308, 163);
+            this.gpbUnidade.Size = new System.Drawing.Size(312, 151);
             this.gpbUnidade.TabIndex = 0;
             this.gpbUnidade.TabStop = false;
-            this.gpbUnidade.Text = "Unidade";
+            this.gpbUnidade.Text = "Unidade de medida";
             // 
             // txtUnidade
             // 
-            this.txtUnidade.Location = new System.Drawing.Point(228, 113);
-            this.txtUnidade.MaxLength = 100;
+            this.txtUnidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUnidade.Location = new System.Drawing.Point(10, 113);
+            this.txtUnidade.MaxLength = 10;
             this.txtUnidade.Name = "txtUnidade";
-            this.txtUnidade.Size = new System.Drawing.Size(69, 26);
-            this.txtUnidade.TabIndex = 35;
+            this.txtUnidade.Size = new System.Drawing.Size(92, 26);
+            this.txtUnidade.TabIndex = 3;
             // 
             // lblUnidade
             // 
             this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Location = new System.Drawing.Point(228, 90);
+            this.lblUnidade.Location = new System.Drawing.Point(10, 90);
             this.lblUnidade.Name = "lblUnidade";
             this.lblUnidade.Size = new System.Drawing.Size(69, 20);
             this.lblUnidade.TabIndex = 36;
@@ -226,14 +232,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 394);
+            this.ClientSize = new System.Drawing.Size(328, 374);
             this.Controls.Add(this.pnlCRUD);
             this.Controls.Add(this.gpbUnidade);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmUnidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GPSFrancisco - Unidades";
+            this.Load += new System.EventHandler(this.frmUnidades_Load);
             this.pnlCRUD.ResumeLayout(false);
             this.gpbUnidade.ResumeLayout(false);
             this.gpbUnidade.PerformLayout();

@@ -61,5 +61,12 @@ namespace GPSFrancisco
             abrir.Show();
             this.Hide();
         }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            frmGerenciarProdutos abrir = new frmGerenciarProdutos();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

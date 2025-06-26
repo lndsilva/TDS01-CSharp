@@ -61,3 +61,6 @@ C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debu
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmGerenciarProdutos.resources
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmUnidades.resources
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmPesquisarUnidadesMedida.resources
