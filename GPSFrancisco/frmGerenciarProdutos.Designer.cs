@@ -69,7 +69,7 @@
             // btnInserir
             // 
             this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInserir.Location = new System.Drawing.Point(700, 175);
+            this.btnInserir.Location = new System.Drawing.Point(709, 204);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(150, 29);
             this.btnInserir.TabIndex = 25;
@@ -79,7 +79,7 @@
             // pcbFotoProduto
             // 
             this.pcbFotoProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pcbFotoProduto.Location = new System.Drawing.Point(700, 25);
+            this.pcbFotoProduto.Location = new System.Drawing.Point(709, 54);
             this.pcbFotoProduto.Name = "pcbFotoProduto";
             this.pcbFotoProduto.Size = new System.Drawing.Size(150, 144);
             this.pcbFotoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +90,7 @@
             // 
             this.cbbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbUnidade.FormattingEnabled = true;
-            this.cbbUnidade.Location = new System.Drawing.Point(491, 126);
+            this.cbbUnidade.Location = new System.Drawing.Point(493, 182);
             this.cbbUnidade.Name = "cbbUnidade";
             this.cbbUnidade.Size = new System.Drawing.Size(146, 28);
             this.cbbUnidade.TabIndex = 11;
@@ -98,7 +98,7 @@
             // lblUnidade
             // 
             this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Location = new System.Drawing.Point(491, 103);
+            this.lblUnidade.Location = new System.Drawing.Point(493, 161);
             this.lblUnidade.Name = "lblUnidade";
             this.lblUnidade.Size = new System.Drawing.Size(69, 20);
             this.lblUnidade.TabIndex = 19;
@@ -261,8 +261,8 @@
             this.pctCodigoBarras.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pctCodigoBarras.Location = new System.Drawing.Point(301, 56);
             this.pctCodigoBarras.Name = "pctCodigoBarras";
-            this.pctCodigoBarras.Size = new System.Drawing.Size(336, 34);
-            this.pctCodigoBarras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCodigoBarras.Size = new System.Drawing.Size(383, 85);
+            this.pctCodigoBarras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCodigoBarras.TabIndex = 38;
             this.pctCodigoBarras.TabStop = false;
             // 
@@ -272,7 +272,7 @@
             this.btnUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnidade.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidade.Image")));
-            this.btnUnidade.Location = new System.Drawing.Point(643, 126);
+            this.btnUnidade.Location = new System.Drawing.Point(645, 182);
             this.btnUnidade.Name = "btnUnidade";
             this.btnUnidade.Size = new System.Drawing.Size(39, 28);
             this.btnUnidade.TabIndex = 37;
@@ -281,7 +281,7 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(23, 200);
+            this.txtQuantidade.Location = new System.Drawing.Point(268, 184);
             this.txtQuantidade.MaxLength = 100;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(96, 26);
@@ -290,7 +290,7 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(23, 177);
+            this.lblQuantidade.Location = new System.Drawing.Point(268, 161);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(92, 20);
             this.lblQuantidade.TabIndex = 36;
@@ -299,7 +299,7 @@
             // lblCodigoBarras
             // 
             this.lblCodigoBarras.AutoSize = true;
-            this.lblCodigoBarras.Location = new System.Drawing.Point(23, 34);
+            this.lblCodigoBarras.Location = new System.Drawing.Point(19, 33);
             this.lblCodigoBarras.Name = "lblCodigoBarras";
             this.lblCodigoBarras.Size = new System.Drawing.Size(130, 20);
             this.lblCodigoBarras.TabIndex = 34;
@@ -308,7 +308,7 @@
             // lblValidade
             // 
             this.lblValidade.AutoSize = true;
-            this.lblValidade.Location = new System.Drawing.Point(444, 177);
+            this.lblValidade.Location = new System.Drawing.Point(577, 232);
             this.lblValidade.Name = "lblValidade";
             this.lblValidade.Size = new System.Drawing.Size(71, 20);
             this.lblValidade.TabIndex = 33;
@@ -317,7 +317,7 @@
             // dtpValidade
             // 
             this.dtpValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpValidade.Location = new System.Drawing.Point(444, 202);
+            this.dtpValidade.Location = new System.Drawing.Point(577, 257);
             this.dtpValidade.Name = "dtpValidade";
             this.dtpValidade.Size = new System.Drawing.Size(107, 26);
             this.dtpValidade.TabIndex = 32;
@@ -325,7 +325,7 @@
             // lblHoraEntrada
             // 
             this.lblHoraEntrada.AutoSize = true;
-            this.lblHoraEntrada.Location = new System.Drawing.Point(294, 177);
+            this.lblHoraEntrada.Location = new System.Drawing.Point(427, 232);
             this.lblHoraEntrada.Name = "lblHoraEntrada";
             this.lblHoraEntrada.Size = new System.Drawing.Size(125, 20);
             this.lblHoraEntrada.TabIndex = 31;
@@ -333,7 +333,7 @@
             // 
             // txtLote
             // 
-            this.txtLote.Location = new System.Drawing.Point(378, 126);
+            this.txtLote.Location = new System.Drawing.Point(379, 184);
             this.txtLote.MaxLength = 5;
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(102, 26);
@@ -342,7 +342,7 @@
             // dtpHoraEntrada
             // 
             this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEntrada.Location = new System.Drawing.Point(294, 202);
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(427, 257);
             this.dtpHoraEntrada.Name = "dtpHoraEntrada";
             this.dtpHoraEntrada.Size = new System.Drawing.Size(97, 26);
             this.dtpHoraEntrada.TabIndex = 29;
@@ -350,7 +350,7 @@
             // lblLote
             // 
             this.lblLote.AutoSize = true;
-            this.lblLote.Location = new System.Drawing.Point(378, 103);
+            this.lblLote.Location = new System.Drawing.Point(379, 161);
             this.lblLote.Name = "lblLote";
             this.lblLote.Size = new System.Drawing.Size(41, 20);
             this.lblLote.TabIndex = 27;
@@ -359,7 +359,7 @@
             // lblDataEntrada
             // 
             this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.Location = new System.Drawing.Point(147, 177);
+            this.lblDataEntrada.Location = new System.Drawing.Point(280, 232);
             this.lblDataEntrada.Name = "lblDataEntrada";
             this.lblDataEntrada.Size = new System.Drawing.Size(125, 20);
             this.lblDataEntrada.TabIndex = 30;
@@ -368,23 +368,23 @@
             // dtpDataEntrada
             // 
             this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(147, 202);
+            this.dtpDataEntrada.Location = new System.Drawing.Point(280, 257);
             this.dtpDataEntrada.Name = "dtpDataEntrada";
             this.dtpDataEntrada.Size = new System.Drawing.Size(103, 26);
             this.dtpDataEntrada.TabIndex = 28;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(23, 126);
+            this.txtDescricao.Location = new System.Drawing.Point(19, 184);
             this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(340, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(231, 26);
             this.txtDescricao.TabIndex = 2;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(23, 103);
+            this.lblDescricao.Location = new System.Drawing.Point(19, 161);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(80, 20);
             this.lblDescricao.TabIndex = 2;
@@ -392,12 +392,12 @@
             // 
             // txtCodigoBarras
             // 
-            this.txtCodigoBarras.Enabled = false;
-            this.txtCodigoBarras.Location = new System.Drawing.Point(23, 56);
+            this.txtCodigoBarras.Location = new System.Drawing.Point(19, 56);
             this.txtCodigoBarras.MaxLength = 13;
             this.txtCodigoBarras.Name = "txtCodigoBarras";
             this.txtCodigoBarras.Size = new System.Drawing.Size(261, 26);
             this.txtCodigoBarras.TabIndex = 1;
+            this.txtCodigoBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigoBarras_KeyDown);
             // 
             // frmGerenciarProdutos
             // 

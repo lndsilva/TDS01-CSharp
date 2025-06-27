@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/06/2025 às 16:55
+-- Tempo de geração: 27/06/2025 às 16:54
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -70,6 +70,23 @@ INSERT INTO `tbfotos` (`codFotos`, `nome`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `tbprodutos`
+--
+
+CREATE TABLE `tbprodutos` (
+  `codBarras` int(11) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  `quantidade` int(11) DEFAULT NULL,
+  `lote` varchar(10) NOT NULL,
+  `dataEntr` datetime DEFAULT NULL,
+  `horaEntr` datetime DEFAULT NULL,
+  `validade` datetime DEFAULT NULL,
+  `codUnid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `tbunidades`
 --
 
@@ -84,20 +101,21 @@ CREATE TABLE `tbunidades` (
 --
 
 INSERT INTO `tbunidades` (`codUnid`, `descricao`, `unidade`) VALUES
-(1, 'QUILOGRAMA', 'KG'),
-(2, 'MILILITRO', 'ML'),
-(3, 'CENTÍMETRO', 'CM'),
+(15, 'BANDEJA', 'BANDEJ'),
+(12, 'BOBINA', 'BOBINA'),
 (4, 'CAIXA', 'CX'),
+(13, 'CÁPSULA', 'CAPS'),
+(3, 'CENTÍMETRO', 'CM'),
+(14, 'CENTO', 'CENTO'),
 (5, 'LITRO', 'LT'),
 (6, 'METRO QUADRADO', 'M2'),
+(2, 'MILILITRO', 'ML'),
 (7, 'PEÇA', 'PC'),
+(1, 'QUILOGRAMA', 'KG'),
 (8, 'ROLO', 'RL'),
 (9, 'SACO', 'SC'),
 (10, 'TAMBOR', 'TB'),
-(11, 'TONELADA', 'TN'),
-(12, 'BOBINA', 'BOBINA'),
-(13, 'CÁPSULA', 'CAPS'),
-(14, 'CENTO', 'CENTO');
+(11, 'TONELADA', 'TN');
 
 -- --------------------------------------------------------
 
@@ -187,10 +205,20 @@ ALTER TABLE `tbfotos`
   ADD PRIMARY KEY (`codFotos`);
 
 --
+-- Índices de tabela `tbprodutos`
+--
+ALTER TABLE `tbprodutos`
+  ADD PRIMARY KEY (`codBarras`),
+  ADD UNIQUE KEY `descricao` (`descricao`),
+  ADD UNIQUE KEY `lote` (`lote`),
+  ADD KEY `codUnid` (`codUnid`);
+
+--
 -- Índices de tabela `tbunidades`
 --
 ALTER TABLE `tbunidades`
-  ADD PRIMARY KEY (`codUnid`);
+  ADD PRIMARY KEY (`codUnid`),
+  ADD UNIQUE KEY `descricao` (`descricao`,`unidade`);
 
 --
 -- Índices de tabela `tbusuarios`
@@ -225,7 +253,7 @@ ALTER TABLE `tbfotos`
 -- AUTO_INCREMENT de tabela `tbunidades`
 --
 ALTER TABLE `tbunidades`
-  MODIFY `codUnid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `codUnid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuarios`
@@ -242,6 +270,12 @@ ALTER TABLE `tbvoluntarios`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `tbprodutos`
+--
+ALTER TABLE `tbprodutos`
+  ADD CONSTRAINT `tbprodutos_ibfk_1` FOREIGN KEY (`codUnid`) REFERENCES `tbunidades` (`codUnid`);
 
 --
 -- Restrições para tabelas `tbvoluntarios`
