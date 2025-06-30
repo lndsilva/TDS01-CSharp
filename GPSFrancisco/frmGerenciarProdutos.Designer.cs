@@ -75,6 +75,7 @@
             this.btnInserir.TabIndex = 25;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // pcbFotoProduto
             // 
@@ -94,6 +95,7 @@
             this.cbbUnidade.Name = "cbbUnidade";
             this.cbbUnidade.Size = new System.Drawing.Size(146, 28);
             this.cbbUnidade.TabIndex = 11;
+            this.cbbUnidade.SelectedIndexChanged += new System.EventHandler(this.cbbUnidade_SelectedIndexChanged);
             // 
             // lblUnidade
             // 
@@ -149,6 +151,7 @@
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnPesquisar
             // 
@@ -162,6 +165,7 @@
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnExcluir
             // 
@@ -188,7 +192,6 @@
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -202,6 +205,7 @@
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnNovo
             // 
@@ -215,6 +219,7 @@
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // gpbInformacoesProduto
             // 

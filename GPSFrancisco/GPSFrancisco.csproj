@@ -196,6 +196,12 @@
     <Compile Include="frmPesquisarAtribuicoes.Designer.cs">
       <DependentUpon>frmPesquisarAtribuicoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesquisarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisarProdutos.Designer.cs">
+      <DependentUpon>frmPesquisarProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPesquisarUnidadesMedida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisarAtribuicoes.resx">
       <DependentUpon>frmPesquisarAtribuicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisarProdutos.resx">
+      <DependentUpon>frmPesquisarProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisarUnidadesMedida.resx">
       <DependentUpon>frmPesquisarUnidadesMedida.cs</DependentUpon>

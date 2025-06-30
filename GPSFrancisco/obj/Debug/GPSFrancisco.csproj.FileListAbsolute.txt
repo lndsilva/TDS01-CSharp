@@ -64,3 +64,4 @@ C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\bin\Debu
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmGerenciarProdutos.resources
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmUnidades.resources
 C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmPesquisarUnidadesMedida.resources
+C:\Users\laercio.nsilva\Documents\Visual Studio 2022\TDS01\GPSFrancisco\obj\Debug\GPSFrancisco.frmPesquisarProdutos.resources
