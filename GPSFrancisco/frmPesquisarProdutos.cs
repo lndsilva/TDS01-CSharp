@@ -75,9 +75,14 @@ namespace GPSFrancisco
             DR.Read();
 
             ltbPesquisar.Items.Clear();
-
-            ltbPesquisar.Items.Add(DR.GetString(1));
-
+            try
+            {
+                ltbPesquisar.Items.Add(DR.GetString(1));
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Código não encontrado.");
+            }
             Conexao.fecharConexao();
 
         }

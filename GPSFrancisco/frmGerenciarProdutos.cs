@@ -125,18 +125,17 @@ namespace GPSFrancisco
             return resp;
         }
         //alterar produtos
-        public int alterarProdutos(int codBarra, string descricao,
+        public int alterarProdutos(string descricao,
             int quantidade, string lote,
             int codigoUnidade, DateTime dataEntrada,
-            DateTime horaEntrada, DateTime validade)
+            DateTime horaEntrada, DateTime validade, byte[] fotoProd, string codBarra)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "update tbProdutos set codBarras = @codBarras,descricao=@descricao,quantidade=@quantidade,lote=@lote,dataEntr=@dataEntr,horaEntr=@horaEntr,validade=@validade,codUnid=@codUnid where codBarras = @codBarras;";
+            comm.CommandText = "update tbProdutos set descricao=@descricao,quantidade=@quantidade,lote=@lote,dataEntr=@dataEntr,horaEntr=@horaEntr,validade=@validade,codUnid=@codUnid,fotoProd=@fotoProd where codBarras = @codBarras;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
 
-            comm.Parameters.Add("@codBarras", MySqlDbType.Int32).Value = codBarra;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = descricao;
             comm.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = quantidade;
             comm.Parameters.Add("@lote", MySqlDbType.VarChar, 10).Value = lote;
@@ -144,6 +143,8 @@ namespace GPSFrancisco
             comm.Parameters.Add("@horaEntr", MySqlDbType.DateTime).Value = horaEntrada;
             comm.Parameters.Add("@validade", MySqlDbType.DateTime).Value = validade;
             comm.Parameters.Add("@codUnid", MySqlDbType.Int32).Value = codigoUnidade;
+            comm.Parameters.Add("@fotoProd", MySqlDbType.LongBlob).Value = fotoProd;
+
 
             comm.Connection = Conexao.obterConexao();
 
@@ -152,15 +153,15 @@ namespace GPSFrancisco
             return resp;
         }
         //excluir produtos
-        public int excluirProdutos(int codBarra)
+        public int excluirProdutos(string codBarras)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "delete from tbProdutos where codBarra = @codBarra;";
+            comm.CommandText = "delete from tbprodutos where codBarras = @codBarras;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
 
-            comm.Parameters.Add("@codBarras", MySqlDbType.Int32).Value = codBarra;
+            comm.Parameters.Add("@codBarras", MySqlDbType.VarChar, 255).Value = codBarras;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -410,6 +411,44 @@ namespace GPSFrancisco
         {
             limparCamposGeral();
             desabilitarCampos();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja excluir?",
+                "Mensagem do sistema",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (dr == DialogResult.Yes)
+            {
+
+                if (excluirProdutos(txtCodigoBarras.Text) == 1)
+                {
+                    MessageBox.Show("Excluido com sucesso!!!",
+                        "Mensagem do sistema", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    limparCamposAlterar();
+                    desabilitarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir.", "Mensagem do sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error,
+                        MessageBoxDefaultButton.Button1);
+                }
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

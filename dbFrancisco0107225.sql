@@ -129,7 +129,7 @@ select * from tbunidades order by unidade;
 select * from tbUnidades where codUnid = @codUnid;
 
 create table tbProdutos(
-codBarras int not null,
+codBarras varchar(255) not null,
 descricao varchar(100) not null unique,
 quantidade int,
 lote varchar(10) not null unique,
@@ -145,3 +145,8 @@ insert into tbProdutos(codBarras,descricao,quantidade,lote,dataEntr,horaEntr,val
 
 update tbProdutos set codBarras = @codBarras,descricao=@descricao,quantidade=@quantidade,lote=@lote,dataEntr=@dataEntr,horaEntr=@horaEntr,validade=@validade,codUnid=@codUnid where codBarras = @codBarras;
 
+
+
+select codBarras, prod.descricao, quantidade, lote, dataEntr, horaEntr, validade, fotoProd, unidade from tbProdutos as prod inner join tbUnidades as uni on prod.codUnid = uni.codUnid where prod.descricao = 'Tio João Arroz Parboilizado';
+
+update tbProdutos set descricao=@descricao,quantidade=@quantidade,lote=@lote,dataEntr=@dataEntr,horaEntr=@horaEntr,validade=@validade,codUnid=@codUnid,fotoProd=@fotoProd where codBarras = @codBarras;

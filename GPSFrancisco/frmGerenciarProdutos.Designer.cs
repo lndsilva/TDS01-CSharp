@@ -79,11 +79,12 @@
             // 
             // pcbFotoProduto
             // 
+            this.pcbFotoProduto.BackColor = System.Drawing.Color.White;
             this.pcbFotoProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pcbFotoProduto.Location = new System.Drawing.Point(709, 54);
             this.pcbFotoProduto.Name = "pcbFotoProduto";
             this.pcbFotoProduto.Size = new System.Drawing.Size(150, 144);
-            this.pcbFotoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbFotoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbFotoProduto.TabIndex = 21;
             this.pcbFotoProduto.TabStop = false;
             // 
@@ -179,6 +180,7 @@
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -192,6 +194,7 @@
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCadastrar
             // 
@@ -263,6 +266,7 @@
             // 
             // pctCodigoBarras
             // 
+            this.pctCodigoBarras.BackColor = System.Drawing.Color.White;
             this.pctCodigoBarras.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pctCodigoBarras.Location = new System.Drawing.Point(301, 56);
             this.pctCodigoBarras.Name = "pctCodigoBarras";
@@ -338,6 +342,7 @@
             // 
             // txtLote
             // 
+            this.txtLote.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.Location = new System.Drawing.Point(379, 184);
             this.txtLote.MaxLength = 5;
             this.txtLote.Name = "txtLote";
@@ -380,10 +385,11 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Location = new System.Drawing.Point(19, 184);
             this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(231, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(243, 26);
             this.txtDescricao.TabIndex = 2;
             // 
             // lblDescricao
